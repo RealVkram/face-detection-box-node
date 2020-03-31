@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json(database.users);
+  res.json("it is working");
 });
 
 app.post("/signin", (req, res) => signIn.handleSignIn(req, res, db, bcrypt));
@@ -57,6 +57,7 @@ app.post("/imageurl", (req, res) => image.handleAPIClarifai(req, res));
 //   // res = false
 // });
 
-app.listen(process.env.PORT || 3001, () => {
-  console.log("app is running on port ${process.env.PORT}");
+const PORT = process.env.PORT;
+app.listen(PORT || 3001, () => {
+  console.log(`app is running on port ${PORT}`);
 });

@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json("it is working");
+  res.json("https://immense-coast-07882.herokuapp.com");
 });
 
 app.post("/signin", (req, res) => signIn.handleSignIn(req, res, db, bcrypt));
